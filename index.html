@@ -1,149 +1,132 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Executores - Sw1ftSync</title>
-<style>
-  /* Reset simples */
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #121212;
-    color: #e0e0e0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  header {
-    background: #1e1e1e;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  header h1 {
-    font-weight: 700;
-    font-size: 1.8rem;
-    color: #61dafb;
-  }
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  nav ul li a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-  }
-  nav ul li a:hover {
-    color: #61dafb;
-  }
-  main {
-    flex: 1;
-    padding: 40px 20px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  section {
-    margin-bottom: 50px;
-  }
-  .intro h2 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-  }
-  .intro p {
-    font-size: 1.2rem;
-    margin-bottom: 25px;
-    color: #bbb;
-  }
-  .btn {
-    background: #61dafb;
-    color: #121212;
-    padding: 12px 28px;
-    border-radius: 6px;
-    font-weight: 700;
-    font-size: 1.1rem;
-    text-decoration: none;
-    display: inline-block;
-    transition: background 0.3s ease;
-  }
-  .btn:hover {
-    background: #21a1f1;
-  }
-  .features ul {
-    list-style: disc inside;
-    font-size: 1.1rem;
-    color: #ccc;
-    line-height: 1.6;
-  }
-  .download p {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    color: #bbb;
-  }
-  footer {
-    background: #1e1e1e;
-    text-align: center;
-    padding: 15px 0;
-    font-size: 0.9rem;
-    color: #888;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loja - Steal a Brainrot</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #111;
+      color: #fff;
+    }
+    header {
+      background: #1f1f1f;
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+      color: #ff4040;
+      box-shadow: 0 0 10px #000;
+    }
+    .container {
+      padding: 40px 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .produtos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      background: #1c1c1c;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px #000;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 15px;
+    }
+    .card-content h2 {
+      font-size: 20px;
+      color: #ff4040;
+      margin: 0 0 10px;
+    }
+    .card-content p {
+      font-size: 14px;
+      color: #ccc;
+    }
+    .botao-comprar {
+      display: block;
+      margin: 15px 0 0;
+      padding: 10px;
+      width: 100%;
+      background: #ff4040;
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+    }
+    .botao-comprar:hover {
+      background: #e22c2c;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #888;
+      background: #1a1a1a;
+    }
+  </style>
 </head>
 <body>
-<header>
-  <h1>Executores</h1>
-  <nav>
-    <ul>
-      <li><a href="#">Início</a></li>
-      <li><a href="#">Recursos</a></li>
-      <li><a href="#">Download</a></li>
-      <li><a href="#">Contato</a></li>
-    </ul>
-  </nav>
-</header>
 
-<main>
-  <section class="intro">
-    <h2>Bem-vindo ao Sw1ftSync Executores</h2>
-    <p>Executores rápidos e eficientes para suas necessidades de scripting.</p>
-    <a href="#" class="btn">Baixar agora</a>
-  </section>
+  <header>
+    Loja Oficial - Steal a Brainrot
+  </header>
 
-  <section class="features">
-    <h2>Recursos</h2>
-    <ul>
-      <li>Execução rápida</li>
-      <li>Compatibilidade ampla</li>
-      <li>Interface amigável</li>
-      <li>Suporte dedicado</li>
-    </ul>
-  </section>
+  <div class="container">
+    <h1>Produtos em Destaque</h1>
 
-  <section class="download">
-    <h2>Faça o download</h2>
-    <p>Escolha seu executável e comece agora mesmo.</p>
-    <a href="#" class="btn">Baixar executores</a>
-  </section>
-</main>
+    <div class="produtos">
 
-<footer>
-  <p>© 2025 Sw1ftSync. Todos os direitos reservados.</p>
-</footer>
+      <div class="card">
+        <img src="https://via.placeholder.com/400x200.png?text=Pass+VIP" alt="Pass VIP">
+        <div class="card-content">
+          <h2>Pass VIP</h2>
+          <p>Acesso antecipado e itens raros no Steal a Brainrot.</p>
+          <a href="https://linkdopagamento-do-mercadopago" class="botao-comprar" target="_blank">Comprar por R$ 9,90</a>
+        </div>
+      </div>
 
-<script>
-  // Exemplo simples: ao clicar no botão "Baixar agora", exibe um alerta
-  document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      alert('Aqui você pode colocar o link de download ou outra ação!');
-    });
-  });
-</script>
+      <div class="card">
+        <img src="https://via.placeholder.com/400x200.png?text=Slap+Booster" alt="Slap Booster">
+        <div class="card-content">
+          <h2>Slap Booster</h2>
+          <p>Aumente sua força no jogo e derrote os inimigos com estilo.</p>
+          <a href="https://linkdopagamento2" class="botao-comprar" target="_blank">Comprar por R$ 5,00</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://via.placeholder.com/400x200.png?text=Item+Troll" alt="Item Troll">
+        <div class="card-content">
+          <h2>Item Troll</h2>
+          <p>Surpreenda os jogadores com efeitos engraçados e únicos.</p>
+          <a href="https://linkdopagamento3" class="botao-comprar" target="_blank">Comprar por R$ 4,00</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Steal a Brainrot - Todos os direitos reservados.
+  </footer>
+
 </body>
 </html>
