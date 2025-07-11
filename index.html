@@ -1,135 +1,157 @@
-<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loja - Steal a Brainrot</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #111;
-      color: #fff;
-    }
-    header {
-      background: #1f1f1f;
-      padding: 20px;
-      text-align: center;
-      font-size: 28px;
-      color: #ff4040;
-      box-shadow: 0 0 10px #000;
-    }
-    .container {
-      padding: 40px 20px;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .produtos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-    .card {
-      background: #1c1c1c;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 0 10px #000;
-      transition: transform 0.3s;
-    }
-    .card:hover {
-      transform: scale(1.03);
-    }
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-    .card-content {
-      padding: 15px;
-    }
-    .card-content h2 {
-      font-size: 20px;
-      color: #ff4040;
-      margin: 0 0 10px;
-    }
-    .card-content p {
-      font-size: 14px;
-      color: #ccc;
-    }
-    .botao-comprar {
-      display: block;
-      margin: 15px 0 0;
-      padding: 10px;
-      width: 100%;
-      background: #ff4040;
-      border: none;
-      color: #fff;
-      font-weight: bold;
-      border-radius: 5px;
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-    }
-    .botao-comprar:hover {
-      background: #e22c2c;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #888;
-      background: #1a1a1a;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja - Steal a Brainrot</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #111;
+      color: #fff;
+    }
+    header {
+      background: #1f1f1f;
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+      color: #ff4040;
+      box-shadow: 0 0 10px #000;
+    }
+    .container {
+      padding: 40px 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .produtos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      background: #1c1c1c;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px #000;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 15px;
+    }
+    .card-content h2 {
+      font-size: 20px;
+      color: #ff4040;
+      margin: 0 0 10px;
+    }
+    .card-content p {
+      font-size: 14px;
+      color: #ccc;
+    }
+    .botao-comprar {
+      display: block;
+      margin: 15px 0 0;
+      padding: 10px;
+      width: 100%;
+      background: #ff4040;
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+    }
+    .botao-comprar:hover {
+      background: #e22c2c;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #888;
+      background: #1a1a1a;
+    }
+  </style>
 </head>
 <body>
 
-  <header>
-    Loja Oficial - Steal a Brainrot
-  </header>
+  <header>
+    Loja Oficial - Steal a Brainrot
+  </header>
 
-  <div class="container">
-    <h1>Produtos em Destaque</h1>
+  <div class="container">
+    <h1>Produtos em Destaque</h1>
 
-    <div class="produtos">
+    <div class="produtos">
 
-      <!-- LA VACCA COM IMAGEM DO REPOSITÓRIO -->
-      <div class="card">
-        <img src="imagens/vaca-saturno.jpg" alt="La Vacca Saturno Saturnita">
-        <div class="card-content">
-          <h2>La Vacca Saturno Saturnita</h2>
-          <p>250k por segundo (sem mutação)</p>
-          <a href="https://linkpagamentovacassaturno" class="botao-comprar" target="_blank">Comprar por R$ 7,50</a>
-        </div>
-      </div>
+            <div class="card">
+        <img src="imagens/vaca-saturno.jpg" alt="La Vacca Saturno Saturnita">
+        <div class="card-content">
+          <h2>La Vacca Saturno Saturnita</h2>
+          <p>250k por segundo (sem mutação)</p>
+          <a href="https://linkpagamentovacassaturno" class="botao-comprar" target="_blank">Comprar por R$ 7,50</a>
+        </div>
+      </div>
 
-      <!-- TRALALERITOS -->
-      <div class="card">
-        <img src="imagens/los-tralaleritos.jpg" alt="Los Tralaleritos">
-        <div class="card-content">
-          <h2>Los Tralaleritos</h2>
-          <p>500k por segundo (sem mutação)</p>
-          <a href="https://linkpagamentotralaleritos" class="botao-comprar" target="_blank">Comprar por R$ 10,00</a>
-        </div>
-      </div>
+            <div class="card">
+        <img src="imagens/los-tralaleritos.jpg" alt="Los Tralaleritos">
+        <div class="card-content">
+          <h2>Los Tralaleritos</h2>
+          <p>500k por segundo (sem mutação)</p>
+          <a href="https://linkpagamentotralaleritos" class="botao-comprar" target="_blank">Comprar por R$ 10,00</a>
+        </div>
+      </div>
 
-      <!-- SPIDERINI -->
-      <div class="card">
-        <img src="imagens/sammy.jpg" alt="Sammyni Spiderini">
-        <div class="card-content">
-          <h2>Sammyni Spiderini</h2>
-          <p>300k por segundo (sem mutação)</p>
-          <a href="https://linkpagamentospiderini" class="botao-comprar" target="_blank">Comprar por R$ 9,00</a>
-        </div>
-      </div>
+            <div class="card">
+        <img src="imagens/sammy.jpg" alt="Sammyni Spiderini">
+        <div class="card-content">
+          <h2>Sammyni Spiderini</h2>
+          <p>300k por segundo (sem mutação)</p>
+          <a href="https://linkpagamentospiderini" class="botao-comprar" target="_blank">Comprar por R$ 9,00</a>
+        </div>
+      </div>
 
-    </div>
-  </div>
+        <div class="card">
+          <img src="imagens/sua-nova-imagem-1.jpg" alt="Nome do Novo Produto 1">
+          <div class="card-content">
+            <h2>Nome do Novo Produto 1</h2>
+            <p>Descrição do novo produto 1 (ex: Xk por segundo)</p>
+            <a href="https://linkpagamentonovo1" class="botao-comprar" target="_blank">Comprar por R$ XX,YY</a>
+          </div>
+        </div>
 
-  <footer>
-    © 2025 Steal a Brainrot - Todos os direitos reservados.
-  </footer>
+        <div class="card">
+          <img src="imagens/sua-nova-imagem-2.jpg" alt="Nome do Novo Produto 2">
+          <div class="card-content">
+            <h2>Nome do Novo Produto 2</h2>
+            <p>Descrição do novo produto 2 (ex: Zk por segundo)</p>
+            <a href="https://linkpagamentonovo2" class="botao-comprar" target="_blank">Comprar por R$ AA,BB</a>
+          </div>
+        </div>
 
-</body>
-</html>
+        <div class="card">
+          <img src="imagens/sua-nova-imagem-3.jpg" alt="Nome do Novo Produto 3">
+          <div class="card-content">
+            <h2>Nome do Novo Produto 3</h2>
+            <p>Descrição do novo produto 3 (ex: Wk por segundo)</p>
+            <a href="https://linkpagamentonovo3" class="botao-comprar" target="_blank">Comprar por R$ CC,DD</a>
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Steal a Brainrot - Todos os direitos reservados.
+  </footer>
+
+</body></html>
