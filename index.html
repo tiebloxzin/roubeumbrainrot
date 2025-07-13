@@ -19,12 +19,11 @@
             color: #ff4040;
             box-shadow: 0 0 10px #000;
         }
-        /* ESTILO PARA O TEXTO DO TIKTOK */
         .tiktok-handle {
-            font-size: 16px; /* Tamanho da fonte menor */
-            color: #aaa; /* Cor um pouco mais suave */
-            margin-top: 5px; /* Espaçamento em cima */
-            display: block; /* Garante que fique em uma nova linha */
+            font-size: 16px;
+            color: #aaa;
+            margin-top: 5px;
+            display: block;
         }
         .container {
             padding: 40px 20px;
@@ -37,15 +36,15 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            justify-content: center; /* Centraliza os itens na grid */
+            justify-content: center;
         }
         .card {
             background: #1c1c1c;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra mais visível */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s;
-            display: flex; /* Para flexbox interno para imagem e conteúdo */
+            display: flex;
             flex-direction: column;
         }
         .card:hover {
@@ -58,10 +57,10 @@
         }
         .card-content {
             padding: 15px;
-            flex-grow: 1; /* Permite que o conteúdo ocupe o espaço restante */
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Empurra o botão para baixo */
+            justify-content: space-between;
         }
         .card-content h2 {
             font-size: 20px;
@@ -71,13 +70,13 @@
         .card-content p {
             font-size: 14px;
             color: #ccc;
-            margin-bottom: 15px; /* Espaço entre a descrição e o botão */
+            margin-bottom: 15px;
         }
         .botao-comprar {
             display: block;
-            margin-top: auto; /* Empurra o botão para o final do card-content */
+            margin-top: auto;
             padding: 10px;
-            width: calc(100% - 20px); /* 100% menos o padding */
+            width: calc(100% - 20px);
             background: #ff4040;
             border: none;
             color: #fff;
@@ -96,13 +95,11 @@
             padding: 20px;
             color: #888;
             background: #1a1a1a;
-            margin-top: 40px; /* Espaço acima do footer */
+            margin-top: 40px;
         }
-
-        /* Media Queries para Responsividade */
         @media (max-width: 600px) {
             .produtos {
-                grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -191,6 +188,80 @@
                 </div>
             </div>
 
+            <!-- Novos 8 produtos adicionados -->
+
+            <div class="card">
+                <img src="imagens/carnavalmental.jpg" alt="Carnaval Mental">
+                <div class="card-content">
+                    <h2>Carnaval Mental</h2>
+                    <p>Distorce o tempo por 2 minutos</p>
+                    <a href="https://linkpagamentocarnaval" class="botao-comprar" target="_blank">Comprar por R$ 6,00</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="imagens/mutatronico.jpg" alt="Mutatrônico Supreme">
+                <div class="card-content">
+                    <h2>Mutatrônico Supreme</h2>
+                    <p>Ativa mutações aleatórias</p>
+                    <a href="https://linkpagamentomutatronico" class="botao-comprar" target="_blank">Comprar por R$ 12,00</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="imagens/rolocoil.jpg" alt="Rolo Coil Maluco">
+                <div class="card-content">
+                    <h2>Rolo Coil Maluco</h2>
+                    <p>Velocidade + pulo máximo</p>
+                    <a href="https://linkpagamentorolocoil" class="botao-comprar" target="_blank">Comprar por R$ 7,99</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="imagens/neuroflop.jpg" alt="Neuroflop 3000">
+                <div class="card-content">
+                    <h2>Neuroflop 3000</h2>
+                    <p>Destrava poderes ocultos por 5 min</p>
+                    <a href="https://linkpagamentoneuroflop" class="botao-comprar" target="_blank">Comprar por R$ 14,00</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="imagens/mutacabra.jpg" alt="Mutacabra Furtiva">
+                <div class="card-content">
+                    <h2>Mutacabra Furtiva</h2>
+                    <p>Invisibilidade por 60 segundos</p>
+                    <a href="https://linkpagamentomutacabra" class="botao-comprar" target="_blank">Comprar por R$ 8,80</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="imagens/iluminatrix.jpg" alt="Iluminatrix Pro Max">
+                <div class="card-content">
+                    <h2>Iluminatrix Pro Max</h2>
+                    <p>Ilumina a mente (literalmente)</p>
+                    <a href="https://linkpagamentoiluminatrix" class="botao-comprar" target="_blank">Comprar por R$ 11,90</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="imagens/pacotefuria.jpg" alt="Pacote Fúria Quântica">
+                <div class="card-content">
+                    <h2>Pacote Fúria Quântica</h2>
+                    <p>Transforme-se em uma besta interdimensional</p>
+                    <a href="https://linkpagamentofuria" class="botao-comprar" target="_blank">Comprar por R$ 22,00</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="imagens/ocultovision.jpg" alt="Óculos Oculto Vision">
+                <div class="card-content">
+                    <h2>Óculos Oculto Vision</h2>
+                    <p>Veja o que ninguém vê no mapa</p>
+                    <a href="https://linkpagamentoocultovision" class="botao-comprar" target="_blank">Comprar por R$ 5,50</a>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -199,9 +270,8 @@
     </footer>
 
     <script>
-        // Este é o espaço para o seu JavaScript.
-        // Você pode adicionar funcionalidades interativas aqui.
+        // JavaScript opcional aqui
     </script>
 
 </body>
-</html>
+                        </html>
