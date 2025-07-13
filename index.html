@@ -10,7 +10,7 @@
       font-family: 'Segoe UI', sans-serif;
       background: #111;
       color: #fff;
-      overflow-x: hidden; /* Evita rolagem horizontal quando o menu está aberto */
+      overflow-x: hidden;
     }
     header {
       background: #1f1f1f;
@@ -23,17 +23,17 @@
       z-index: 1002;
       display: flex;
       align-items: center;
-      justify-content: center; /* Centraliza o conteúdo principal */
-      min-height: 60px; /* Garante uma altura mínima para o cabeçalho */
+      justify-content: center;
+      min-height: 60px;
     }
     .header-content {
       text-align: center;
       flex-grow: 1;
-      padding: 0 50px; /* Adicionado padding para o texto não ficar muito perto do menu */
+      padding: 0 50px;
     }
-    .header-content .main-title { /* Novo estilo para o título principal */
+    .header-content .main-title {
       font-size: 28px;
-      line-height: 1.2; /* Ajusta a altura da linha */
+      line-height: 1.2;
     }
     .tiktok-handle {
       font-size: 16px;
@@ -66,10 +66,11 @@
       width: 250px;
       height: 100%;
       background: #1a1a1a;
-      padding-top: 60px; /* Espaço para o cabeçalho, se necessário */
+      padding-top: 90px; /* Aumentado o padding-top para deixar mais espaço no topo */
       box-shadow: 2px 0 5px rgba(0,0,0,0.5);
       transition: left 0.3s ease;
       z-index: 1000;
+      overflow-y: auto; /* Adicionado para permitir rolagem vertical se o conteúdo for muito longo */
     }
     nav.active {
       left: 0;
@@ -80,17 +81,17 @@
       color: #fff;
       text-decoration: none;
       font-weight: bold;
-      white-space: nowrap; /* Evita que o texto quebre linha */
+      white-space: nowrap;
     }
     nav a:hover {
       background: #333;
     }
     .container {
       padding: 80px 20px;
-      transition: margin-left 0.3s ease; /* Adiciona transição para o empurrão */
+      transition: margin-left 0.3s ease;
     }
     body.nav-active .container {
-      margin-left: 250px; /* Empurra o conteúdo para a direita quando a nav está ativa */
+      margin-left: 250px;
     }
     h1 {
       text-align: center;
@@ -161,22 +162,25 @@
       background: #1a1a1a;
       margin-top: 40px;
     }
-    @media (max-width: 768px) { /* Ajustes para telas menores, como mobile */
+    @media (max-width: 768px) {
       header {
-        font-size: 20px; /* Diminui o tamanho da fonte do cabeçalho */
-        padding: 15px 10px; /* Reduz o padding geral do header */
+        font-size: 20px;
+        padding: 15px 10px;
       }
       .header-content {
-        padding: 0 40px; /* Ajusta o padding para o texto não sobrepor o menu */
+        padding: 0 40px;
       }
       .header-content .main-title {
-        font-size: 20px; /* Ajusta o tamanho da fonte do título principal para mobile */
+        font-size: 20px;
       }
       .tiktok-handle {
-        font-size: 14px; /* Diminui a fonte do TikTok handle */
+        font-size: 14px;
       }
       .menu-toggle {
-        left: 15px; /* Ajusta a posição do menu-toggle para mobile */
+        left: 15px;
+      }
+      nav {
+        padding-top: 70px; /* Ajuste para o mobile, para não ficar muito espaçado */
       }
     }
   </style>
@@ -342,7 +346,7 @@
       const nav = document.querySelector('nav');
       const body = document.body;
       nav.classList.toggle('active');
-      body.classList.toggle('nav-active'); // Adiciona/remove classe no body
+      body.classList.toggle('nav-active');
     }
 
     function mostrarSecao(secao) {
@@ -352,4 +356,4 @@
     mostrarSecao('brainrots');
   </script>
 </body>
-</html>
+          </html>
