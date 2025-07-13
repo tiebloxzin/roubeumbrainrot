@@ -10,6 +10,7 @@
       font-family: 'Segoe UI', sans-serif;
       background: #111;
       color: #fff;
+      overflow-x: hidden; /* Evita rolagem horizontal quando o menu está aberto */
     }
     header {
       background: #1f1f1f;
@@ -18,15 +19,21 @@
       font-size: 28px;
       color: #ff4040;
       box-shadow: 0 0 10px #000;
-      position: relative; /* Mantido para z-index e posicionamento interno */
+      position: relative;
       z-index: 1002;
-      display: flex; /* Adicionado para alinhar itens dentro do header */
-      align-items: center; /* Centraliza verticalmente */
+      display: flex;
+      align-items: center;
       justify-content: center; /* Centraliza o conteúdo principal */
+      min-height: 60px; /* Garante uma altura mínima para o cabeçalho */
     }
-    .header-content { /* Novo wrapper para o texto do cabeçalho */
+    .header-content {
       text-align: center;
-      flex-grow: 1; /* Permite que o conteúdo principal ocupe o espaço restante */
+      flex-grow: 1;
+      padding: 0 50px; /* Adicionado padding para o texto não ficar muito perto do menu */
+    }
+    .header-content .main-title { /* Novo estilo para o título principal */
+      font-size: 28px;
+      line-height: 1.2; /* Ajusta a altura da linha */
     }
     .tiktok-handle {
       font-size: 16px;
@@ -35,14 +42,14 @@
       display: block;
     }
     .menu-toggle {
-      position: absolute; /* Mantido absoluto em relação ao header */
-      top: 50%; /* Centraliza verticalmente */
+      position: absolute;
+      top: 50%;
       left: 20px;
-      transform: translateY(-50%); /* Ajuste fino para centralização vertical */
+      transform: translateY(-50%);
       width: 30px;
       height: 25px;
       cursor: pointer;
-      z-index: 1003; /* Aumentado para garantir que fique acima de tudo no header */
+      z-index: 1003;
     }
     .menu-toggle span {
       display: block;
@@ -59,7 +66,7 @@
       width: 250px;
       height: 100%;
       background: #1a1a1a;
-      padding-top: 60px;
+      padding-top: 60px; /* Espaço para o cabeçalho, se necessário */
       box-shadow: 2px 0 5px rgba(0,0,0,0.5);
       transition: left 0.3s ease;
       z-index: 1000;
@@ -73,12 +80,17 @@
       color: #fff;
       text-decoration: none;
       font-weight: bold;
+      white-space: nowrap; /* Evita que o texto quebre linha */
     }
     nav a:hover {
       background: #333;
     }
     .container {
       padding: 80px 20px;
+      transition: margin-left 0.3s ease; /* Adiciona transição para o empurrão */
+    }
+    body.nav-active .container {
+      margin-left: 250px; /* Empurra o conteúdo para a direita quando a nav está ativa */
     }
     h1 {
       text-align: center;
@@ -149,27 +161,41 @@
       background: #1a1a1a;
       margin-top: 40px;
     }
-    @media (max-width: 600px) {
-      .produtos {
-        grid-template-columns: 1fr;
+    @media (max-width: 768px) { /* Ajustes para telas menores, como mobile */
+      header {
+        font-size: 20px; /* Diminui o tamanho da fonte do cabeçalho */
+        padding: 15px 10px; /* Reduz o padding geral do header */
+      }
+      .header-content {
+        padding: 0 40px; /* Ajusta o padding para o texto não sobrepor o menu */
+      }
+      .header-content .main-title {
+        font-size: 20px; /* Ajusta o tamanho da fonte do título principal para mobile */
+      }
+      .tiktok-handle {
+        font-size: 14px; /* Diminui a fonte do TikTok handle */
+      }
+      .menu-toggle {
+        left: 15px; /* Ajusta a posição do menu-toggle para mobile */
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
+    <div class="menu-toggle" onclick="toggleNav()">
       <span></span>
       <span></span>
       <span></span>
     </div>
-    <div class="header-content"> Loja Oficial - Steal a Brainrot
+    <div class="header-content">
+      <div class="main-title">Loja Oficial - Steal a Brainrot</div>
       <span class="tiktok-handle">TikTok: @roubeumbrainrot_loja_</span>
     </div>
   </header>
   <nav>
-    <a href="#brainrots" onclick="mostrarSecao('brainrots')">Brainrots</a>
-    <a href="#gamepass" onclick="mostrarSecao('gamepass')">Gamepass</a>
+    <a href="#brainrots" onclick="mostrarSecao('brainrots'); toggleNav();">Brainrots</a>
+    <a href="#gamepass" onclick="mostrarSecao('gamepass'); toggleNav();">Gamepass</a>
   </nav>
   <div class="container">
     <h1>Produtos em Destaque</h1>
@@ -312,6 +338,13 @@
     © 2025 Steal a Brainrot - Todos os direitos reservados.
   </footer>
   <script>
+    function toggleNav() {
+      const nav = document.querySelector('nav');
+      const body = document.body;
+      nav.classList.toggle('active');
+      body.classList.toggle('nav-active'); // Adiciona/remove classe no body
+    }
+
     function mostrarSecao(secao) {
       document.getElementById('brainrots').style.display = secao === 'brainrots' ? 'grid' : 'none';
       document.getElementById('gamepass').style.display = secao === 'gamepass' ? 'grid' : 'none';
@@ -319,4 +352,4 @@
     mostrarSecao('brainrots');
   </script>
 </body>
-  </html>
+</html>
