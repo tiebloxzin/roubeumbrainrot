@@ -14,13 +14,19 @@
     header {
       background: #1f1f1f;
       padding: 20px;
-      padding-left: 60px; /* Adicionado padding para o texto não ficar tão perto do menu */
       text-align: center;
       font-size: 28px;
       color: #ff4040;
       box-shadow: 0 0 10px #000;
-      position: relative; /* Adicionado para z-index funcionar corretamente */
-      z-index: 1002; /* Alterado para ficar acima do menu-toggle */
+      position: relative; /* Mantido para z-index e posicionamento interno */
+      z-index: 1002;
+      display: flex; /* Adicionado para alinhar itens dentro do header */
+      align-items: center; /* Centraliza verticalmente */
+      justify-content: center; /* Centraliza o conteúdo principal */
+    }
+    .header-content { /* Novo wrapper para o texto do cabeçalho */
+      text-align: center;
+      flex-grow: 1; /* Permite que o conteúdo principal ocupe o espaço restante */
     }
     .tiktok-handle {
       font-size: 16px;
@@ -29,13 +35,14 @@
       display: block;
     }
     .menu-toggle {
-      position: absolute;
-      top: 20px;
-      left: 20px; /* Mantido em 20px para alinhar com o padding do header */
+      position: absolute; /* Mantido absoluto em relação ao header */
+      top: 50%; /* Centraliza verticalmente */
+      left: 20px;
+      transform: translateY(-50%); /* Ajuste fino para centralização vertical */
       width: 30px;
       height: 25px;
       cursor: pointer;
-      z-index: 1001;
+      z-index: 1003; /* Aumentado para garantir que fique acima de tudo no header */
     }
     .menu-toggle span {
       display: block;
@@ -150,19 +157,20 @@
   </style>
 </head>
 <body>
-  <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+  <header>
+    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="header-content"> Loja Oficial - Steal a Brainrot
+      <span class="tiktok-handle">TikTok: @roubeumbrainrot_loja_</span>
+    </div>
+  </header>
   <nav>
     <a href="#brainrots" onclick="mostrarSecao('brainrots')">Brainrots</a>
     <a href="#gamepass" onclick="mostrarSecao('gamepass')">Gamepass</a>
   </nav>
-  <header>
-    Loja Oficial - Steal a Brainrot
-    <span class="tiktok-handle">TikTok: @roubeumbrainrot_loja_</span>
-  </header>
   <div class="container">
     <h1>Produtos em Destaque</h1>
     <div class="produtos" id="brainrots">
