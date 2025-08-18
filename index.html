@@ -1,359 +1,488 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja - Steal a Brainrot</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: #111;
-            color: #fff;
-            overflow-x: hidden;
-        }
-        header {
-            background: #1f1f1f;
-            padding: 20px;
-            text-align: center;
-            font-size: 28px;
-            color: #ff4040;
-            box-shadow: 0 0 10px #000;
-            position: relative;
-            z-index: 1002;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 60px;
-        }
-        .header-content {
-            text-align: center;
-            flex-grow: 1;
-            padding: 0 50px;
-        }
-        .header-content .main-title {
-            font-size: 28px;
-            line-height: 1.2;
-        }
-        .tiktok-handle {
-            font-size: 16px;
-            color: #aaa;
-            margin-top: 5px;
-            display: block;
-        }
-        .menu-toggle {
-            position: absolute;
-            top: 50%;
-            left: 20px;
-            transform: translateY(-50%);
-            width: 30px;
-            height: 25px;
-            cursor: pointer;
-            z-index: 1003;
-        }
-        .menu-toggle span {
-            display: block;
-            height: 4px;
-            margin: 5px 0;
-            background: white;
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-        nav {
-            position: fixed;
-            top: 0;
-            left: -250px;
-            width: 250px;
-            height: 100%;
-            background: #1a1a1a;
-            padding-top: 90px; /* Aumentado o padding-top para deixar mais espaço no topo */
-            box-shadow: 2px 0 5px rgba(0,0,0,0.5);
-            transition: left 0.3s ease;
-            z-index: 1000;
-            overflow-y: auto; /* Adicionado para permitir rolagem vertical se o conteúdo for muito longo */
-        }
-        nav.active {
-            left: 0;
-        }
-        nav a {
-            display: block;
-            padding: 15px 20px;
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            white-space: nowrap;
-        }
-        nav a:hover {
-            background: #333;
-        }
-        .container {
-            padding: 80px 20px;
-            transition: margin-left 0.3s ease;
-        }
-        body.nav-active .container {
-            margin-left: 250px;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .produtos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            justify-content: center;
-        }
-        .card {
-            background: #1c1c1c;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s;
-            display: flex;
-            flex-direction: column;
-        }
-        .card:hover {
-            transform: scale(1.03);
-        }
-        .card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-        .card-content {
-            padding: 15px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .card-content h2 {
-            font-size: 20px;
-            color: #ff4040;
-            margin: 0 0 10px;
-        }
-        .card-content p {
-            font-size: 14px;
-            color: #ccc;
-            margin-bottom: 15px;
-        }
-        .botao-comprar {
-            display: block;
-            margin-top: auto;
-            padding: 10px;
-            width: calc(100% - 20px);
-            background: #ff4040;
-            border: none;
-            color: #fff;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            transition: background 0.3s ease;
-        }
-        .botao-comprar:hover {
-            background: #e22c2c;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #888;
-            background: #1a1a1a;
-            margin-top: 40px;
-        }
-        @media (max-width: 768px) {
-            header {
-                font-size: 20px;
-                padding: 15px 10px;
-            }
-            .header-content {
-                padding: 0 40px;
-            }
-            .header-content .main-title {
-                font-size: 20px;
-            }
-            .tiktok-handle {
-                font-size: 14px;
-            }
-            .menu-toggle {
-                left: 15px;
-            }
-            nav {
-                padding-top: 70px; /* Ajuste para o mobile, para não ficar muito espaçado */
-            }
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja - Steal a Brainrot</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #111;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        header {
+            background: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            color: #ff4040;
+            box-shadow: 0 0 10px #000;
+            position: relative;
+            z-index: 1002;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 60px;
+        }
+        .header-content {
+            text-align: center;
+            flex-grow: 1;
+            padding: 0 50px;
+        }
+        .header-content .main-title {
+            font-size: 28px;
+            line-height: 1.2;
+        }
+        .tiktok-handle {
+            font-size: 16px;
+            color: #aaa;
+            margin-top: 5px;
+            display: block;
+        }
+        .menu-toggle {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+            z-index: 1003;
+        }
+        .menu-toggle span {
+            display: block;
+            height: 4px;
+            margin: 5px 0;
+            background: white;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background: #1a1a1a;
+            padding-top: 90px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+            transition: left 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        nav.active {
+            left: 0;
+        }
+        nav a {
+            display: block;
+            padding: 15px 20px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        nav a:hover {
+            background: #333;
+        }
+        .container {
+            padding: 80px 20px;
+            transition: margin-left 0.3s ease;
+        }
+        body.nav-active .container {
+            margin-left: 250px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            justify-content: center;
+        }
+        .card {
+            background: #1c1c1c;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: scale(1.03);
+        }
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card-content h2 {
+            font-size: 20px;
+            color: #ff4040;
+            margin: 0 0 10px;
+        }
+        .card-content p {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+        .botao-comprar {
+            display: block;
+            margin-top: auto;
+            padding: 10px;
+            width: calc(100% - 20px);
+            background: #ff4040;
+            border: none;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        .botao-comprar:hover {
+            background: #e22c2c;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #888;
+            background: #1a1a1a;
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            header {
+                font-size: 20px;
+                padding: 15px 10px;
+            }
+            .header-content {
+                padding: 0 40px;
+            }
+            .header-content .main-title {
+                font-size: 20px;
+            }
+            .tiktok-handle {
+                font-size: 14px;
+            }
+            .menu-toggle {
+                left: 15px;
+            }
+            nav {
+                padding-top: 70px;
+            }
+        }
+
+        /* CSS para o modal de pagamento */
+        .modal-pix {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .modal-content {
+            background: #1c1c1c;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.7);
+            text-align: center;
+            width: 90%;
+            max-width: 450px;
+        }
+        .modal-content h2 {
+            color: #ff4040;
+        }
+        .modal-content p {
+            color: #ccc;
+        }
+        .modal-content .campo {
+            margin: 20px 0;
+        }
+        .modal-content label {
+            display: block;
+            margin-bottom: 5px;
+            color: #aaa;
+        }
+        .modal-content input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            background: #333;
+            border: 1px solid #555;
+            color: #fff;
+            font-size: 1.2em;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .modal-content button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background: #ff4040;
+            border: none;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .modal-content button.fechar {
+            background: #555;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="menu-toggle" onclick="toggleNav()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="header-content">
-            <div class="main-title">Loja Oficial - Steal a Brainrot</div>
-            <span class="tiktok-handle">TikTok: @roubeumbrainrot_loja_ Ou @Lowes Store</span>
-        </div>
-    </header>
-    <nav>
-        <a href="#brainrots" onclick="mostrarSecao('brainrots'); toggleNav();">Brainrots</a>
-        <a href="#gamepass" onclick="mostrarSecao('gamepass'); toggleNav();">Gamepass</a>
-    </nav>
-    <div class="container">
-        <h1>Produtos em Destaque</h1>
-        <div class="produtos" id="brainrots">
-            <div class="card">
-                <img src="imagens/lavaca.jpg" alt="La Vacca Saturno Saturnita">
-                <div class="card-content">
-                    <h2>La Vacca Saturno Saturnita</h2>
-                    <p>250k por segundo (sem mutação)</p>
-                    <a href="https://go.hotmart.com/L100880728E" class="botao-comprar" target="_blank">Comprar por R$ 7,50</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="imagens/los-tralaleritos.jpg" alt="Los Tralaleritos">
-                <div class="card-content">
-                    <h2>Los Tralaleritos</h2>
-                    <p>500k por segundo (sem mutação)</p>
-                    <a href="https://linkpagamentotralaleritos" class="botao-comprar" target="_blank">Comprar por R$ 10,00</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="imagens/sammy.jpg" alt="Chimpanzini Spiderini">
-                <div class="card-content">
-                    <h2>Chimpanzini Spiderini</h2>
-                    <p>300k por segundo (sem mutação)</p>
-                    <a href="https://linkpagamentospiderini" class="botao-comprar" target="_blank">Comprar por R$ 9,00</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="imagens/graipuss.jpg" alt="Graipuss Medusi">
-                <div class="card-content">
-                    <h2>Graipuss Medusi</h2>
-                    <p>1 Milhão por segundo (sem mutação)</p>
-                    <a href="https://linkpagamentograipuss" class="botao-comprar" target="_blank">Comprar por R$ 15,00</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="imagens/la-grande.jpg" alt="La Grande Combinasion">
-                <div class="card-content">
-                    <h2>La Grande Combinasion</h2>
-                    <p>10 Milhões por segundo (sem mutação)</p>
-                    <a href="https://linkpagamentograndecombinasion" class="botao-comprar" target="_blank">Comprar por R$ 25,00</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="imagens/grama.jpg" alt="Grama And Madung">
-                <div class="card-content">
-                    <h2>Grama And Madung</h2>
-                    <p>Distorce o tempo por 2 minutos</p>
-                    <a href="https://linkpagamentocarnaval" class="botao-comprar" target="_blank">Comprar por R$ 30,00</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="imagens/orcalero.jpg" alt="Orcalero Orcala">
-                <div class="card-content">
-                    <h2>Orcalero Orcala</h2>
-                    <p>100k por segundo (sem mutação)</p>
-                    <a href="https://linkpagamentomutatronico" class="botao-comprar" target="_blank">Comprar por R$ 5,00</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="imagens/tartaruga.jpg" alt="Torturrtuginni Dragonfrutini">
-                <div class="card-content">
-                    <h2>Torturrtuginni Dragonfrutini</h2>
-                    <p>350k por segundo (sem mutação)</p>
-                    <a href="https://linkpagamentorolocoil" class="botao-comprar" target="_blank">Comprar por R$ 9,00</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="imagens/las.jpg" alt="Las Tralaleritas">
-                <div class="card-content">
-                    <h2>Las Tralaleritas</h2>
-                    <p>650k por segundo (sem mutação)</p>
-                    <a href="https://linkpagamentoneuroflop" class="botao-comprar" target="_blank">Comprar por R$ 12,00</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="imagens/pot.jpg" alt="Pot HotsPot">
-                <div class="card-content">
-                    <h2>Pot HotsPot</h2>
-                    <p>2,5 Milhões por segundo (sem mutação)</p>
-                    <a href="https://linkpagamentomutacabra" class="botao-comprar" target="_blank">Comprar por R$ 20,00</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="imagens/turbo.jpg" alt="TrenosTurbo 3000">
-                <div class="card-content">
-                    <h2>TrenosTurbo 3000</h2>
-                    <p>150k por segundo (sem mutação)</p>
-                    <a href="https://linkpagamentoiluminatrix" class="botao-comprar" target="_blank">Comprar por R$ 7,00</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="imagens/god.jpg" alt="Lucky Block God Brainrot">
-                <div class="card-content">
-                    <h2>Lucky Block God Brainrot</h2>
-                    <p>Chance de vir Orcalero Orcala ou Tigrilini Frudodini</p>
-                    <a href="https://linkpagamentofuria" class="botao-comprar" target="_blank">Comprar por R$ 8,00</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="imagens/secret.jpg" alt="Lucky Block Secreto">
-                <div class="card-content">
-                    <h2>Lucky Block Secreto</h2>
-                    <p>Chance de vir Pot HotsPot ou Torturrtuginni Dragonfrutini</p>
-                    <a href="https://linkpagamentoocultovision" class="botao-comprar" target="_blank">Comprar por R$ 15,00</a>
-                </div>
-            </div>
-        </div>
+    <header>
+        <div class="menu-toggle" onclick="toggleNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="header-content">
+            <div class="main-title">Loja Oficial - Steal a Brainrot</div>
+            <span class="tiktok-handle">TikTok: @roubeumbrainrot_loja_ Ou @Lowes Store</span>
+        </div>
+    </header>
+    <nav>
+        <a href="#brainrots" onclick="mostrarSecao('brainrots'); toggleNav();">Brainrots</a>
+        <a href="#gamepass" onclick="mostrarSecao('gamepass'); toggleNav();">Gamepass</a>
+    </nav>
+    <div class="container">
+        <h1>Produtos em Destaque</h1>
+        <div class="produtos" id="brainrots">
+            <div class="card">
+                <img src="imagens/lavaca.jpg" alt="La Vacca Saturno Saturnita">
+                <div class="card-content">
+                    <h2>La Vacca Saturno Saturnita</h2>
+                    <p>250k por segundo (sem mutação)</p>
+                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 7,50</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="imagens/los-tralaleritos.jpg" alt="Los Tralaleritos">
+                <div class="card-content">
+                    <h2>Los Tralaleritos</h2>
+                    <p>500k por segundo (sem mutação)</p>
+                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 10,00</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="imagens/sammy.jpg" alt="Chimpanzini Spiderini">
+                <div class="card-content">
+                    <h2>Chimpanzini Spiderini</h2>
+                    <p>300k por segundo (sem mutação)</p>
+                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 9,00</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="imagens/graipuss.jpg" alt="Graipuss Medusi">
+                <div class="card-content">
+                    <h2>Graipuss Medusi</h2>
+                    <p>1 Milhão por segundo (sem mutação)</p>
+                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 15,00</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="imagens/la-grande.jpg" alt="La Grande Combinasion">
+                <div class="card-content">
+                    <h2>La Grande Combinasion</h2>
+                    <p>10 Milhões por segundo (sem mutação)</p>
+                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 25,00</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="imagens/grama.jpg" alt="Grama And Madung">
+                <div class="card-content">
+                    <h2>Grama And Madung</h2>
+                    <p>Distorce o tempo por 2 minutos</p>
+                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 30,00</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="imagens/orcalero.jpg" alt="Orcalero Orcala">
+                <div class="card-content">
+                    <h2>Orcalero Orcala</h2>
+                    <p>100k por segundo (sem mutação)</p>
+                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 5,00</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="imagens/tartaruga.jpg" alt="Torturrtuginni Dragonfrutini">
+                <div class="card-content">
+                    <h2>Torturrtuginni Dragonfrutini</h2>
+                    <p>350k por segundo (sem mutação)</p>
+                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 9,00</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="imagens/las.jpg" alt="Las Tralaleritas">
+                <div class="card-content">
+                    <h2>Las Tralaleritas</h2>
+                    <p>650k por segundo (sem mutação)</p>
+                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 12,00</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="imagens/pot.jpg" alt="Pot HotsPot">
+                <div class="card-content">
+                    <h2>Pot HotsPot</h2>
+                    <p>2,5 Milhões por segundo (sem mutação)</p>
+                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 20,00</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="imagens/turbo.jpg" alt="TrenosTurbo 3000">
+                <div class="card-content">
+                    <h2>TrenosTurbo 3000</h2>
+                    <p>150k por segundo (sem mutação)</p>
+                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 7,00</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="imagens/god.jpg" alt="Lucky Block God Brainrot">
+                <div class="card-content">
+                    <h2>Lucky Block God Brainrot</h2>
+                    <p>Chance de vir Orcalero Orcala ou Tigrilini Frudodini</p>
+                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 8,00</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="imagens/secret.jpg" alt="Lucky Block Secreto">
+                <div class="card-content">
+                    <h2>Lucky Block Secreto</h2>
+                    <p>Chance de vir Pot HotsPot ou Torturrtuginni Dragonfrutini</p>
+                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 15,00</a>
+                </div>
+            </div>
+        </div>
 
-        <div class="produtos" id="gamepass" style="display: none;">
-            <div class="card">
-                <img src="imagens/2x.jpg" alt="2x money">
-                <div class="card-content">
-                    <h2>2x money</h2>
-                    <p>Colete 2x mais dinheiro!</p>
-                    <a href="https://linkpagamento2xmoney" class="botao-comprar" target="_blank">Comprar por R$ 10,00</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="imagens/vip.jpg" alt="VIP">
-                <div class="card-content">
-                    <h2>VIP</h2>
-                    <p>Tenha vários benefícios!</p>
-                    <a href="https://linkpagamentovip" class="botao-comprar" target="_blank">Comprar por R$ 17,50</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="imagens/hdadmin.jpg" alt="HD Admin">
-                <div class="card-content">
-                    <h2>HD Admin</h2>
-                    <p>Tenha comandos de administrador!</p>
-                    <a href="https://linkpagamentohdadmin" class="botao-comprar" target="_blank">Comprar por R$ 50,00</a>
-                </div>
-            </div>
-        </div>
+        <div class="produtos" id="gamepass" style="display: none;">
+            <div class="card">
+                <img src="imagens/2x.jpg" alt="2x money">
+                <div class="card-content">
+                    <h2>2x money</h2>
+                    <p>Colete 2x mais dinheiro!</p>
+                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 10,00</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="imagens/vip.jpg" alt="VIP">
+                <div class="card-content">
+                    <h2>VIP</h2>
+                    <p>Tenha vários benefícios!</p>
+                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 17,50</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="imagens/hdadmin.jpg" alt="HD Admin">
+                <div class="card-content">
+                    <h2>HD Admin</h2>
+                    <p>Tenha comandos de administrador!</p>
+                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 50,00</a>
+                </div>
+            </div>
+        </div>
 
-    </div>
-    <footer>
-        © 2025 Steal a Brainrot - Todos os direitos reservados.
-    </footer>
-    <script>
-        function toggleNav() {
-            const nav = document.querySelector('nav');
-            const body = document.body;
-            nav.classList.toggle('active');
-            body.classList.toggle('nav-active');
-        }
+    </div>
+    <footer>
+        © 2025 Steal a Brainrot - Todos os direitos reservados.
+    </footer>
 
-        function mostrarSecao(secao) {
-            document.getElementById('brainrots').style.display = secao === 'brainrots' ? 'grid' : 'none';
-            document.getElementById('gamepass').style.display = secao === 'gamepass' ? 'grid' : 'none';
-        }
-        mostrarSecao('brainrots');
-    </script>
+        <div class="modal-pix" id="modal-pix">
+        <div class="modal-content">
+            <h2>Pagamento Pix</h2>
+            <p>Siga os passos abaixo para concluir seu pagamento. Utilize o código de referência para que possamos identificar a sua compra.</p>
+            
+            <div class="campo">
+                <label for="codigoAleatorio">Código de Referência (6 dígitos):</label>
+                <input type="text" id="codigoAleatorio" readonly>
+                <button onclick="copiarTexto('codigoAleatorio')">Copiar Código</button>
+            </div>
+
+            <div class="campo">
+                <label for="telefoneContato">Telefone para Contato:</label>
+                <input type="text" id="telefoneContato" readonly>
+                <button onclick="copiarTexto('telefoneContato')">Copiar Telefone</button>
+            </div>
+            
+            <p style="font-size: 0.9em; color: #888;">Após copiar os dados, realize o pagamento para nossa chave Pix.</p>
+            <p style="font-weight: bold; font-size: 1.1em; color: #fff; word-break: break-all;">Chave Pix: <span id="chave-pix-fixa">99eb6495-c967-4941-adf3-a592bc158d22</span></p>
+
+            <button class="fechar" onclick="fecharModal()">Fechar</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleNav() {
+            const nav = document.querySelector('nav');
+            const body = document.body;
+            nav.classList.toggle('active');
+            body.classList.toggle('nav-active');
+        }
+
+        function mostrarSecao(secao) {
+            document.getElementById('brainrots').style.display = secao === 'brainrots' ? 'grid' : 'none';
+            document.getElementById('gamepass').style.display = secao === 'gamepass' ? 'grid' : 'none';
+        }
+        mostrarSecao('brainrots');
+
+        // NOVO: Funções para o modal de pagamento
+        function abrirModalPix() {
+            // Gera um número aleatório de 6 dígitos
+            const codigoAleatorio = Math.floor(100000 + Math.random() * 900000);
+            
+            // Insira seu número de telefone aqui
+            const telefoneContato = "11987654321"; // Exemplo: (11) 98765-4321
+
+            // Preenche os campos no modal
+            document.getElementById('codigoAleatorio').value = codigoAleatorio;
+            document.getElementById('telefoneContato').value = formatarTelefone(telefoneContato);
+
+            // Exibe o modal
+            document.getElementById('modal-pix').style.display = 'flex';
+        }
+
+        function fecharModal() {
+            document.getElementById('modal-pix').style.display = 'none';
+        }
+
+        function copiarTexto(id) {
+            const campo = document.getElementById(id);
+            campo.select();
+            campo.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(campo.value)
+                .then(() => {
+                    alert("Copiado com sucesso!");
+                })
+                .catch(err => {
+                    console.error('Erro ao copiar: ', err);
+                    alert("Erro ao copiar. Por favor, copie o texto manualmente.");
+                });
+        }
+
+        function formatarTelefone(numero) {
+            const ddd = numero.substring(0, 2);
+            const parte1 = numero.substring(2, 7);
+            const parte2 = numero.substring(7, 11);
+            return `(${11}) ${94577}-${7937}`;
+        }
+    </script>
 </body>
 </html>
