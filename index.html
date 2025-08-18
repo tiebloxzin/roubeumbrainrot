@@ -409,22 +409,18 @@
         <div class="modal-content">
             <h2>Pagamento Pix</h2>
             <p>Siga os passos abaixo para concluir seu pagamento. Utilize o código de referência para que possamos identificar a sua compra.</p>
-            
             <div class="campo">
                 <label for="codigoAleatorio">Código de Referência (6 dígitos):</label>
                 <input type="text" id="codigoAleatorio" readonly>
                 <button onclick="copiarTexto('codigoAleatorio')">Copiar Código</button>
             </div>
-
             <div class="campo">
                 <label for="telefoneContato">Telefone para Contato:</label>
                 <input type="text" id="telefoneContato" readonly>
                 <button onclick="copiarTexto('telefoneContato')">Copiar Telefone</button>
             </div>
-            
             <p style="font-size: 0.9em; color: #888;">Após copiar os dados, realize o pagamento para nossa chave Pix.</p>
             <p style="font-weight: bold; font-size: 1.1em; color: #fff; word-break: break-all;">Chave Pix: <span id="chave-pix-fixa">99eb6495-c967-4941-adf3-a592bc158d22</span></p>
-
             <button class="fechar" onclick="fecharModal()">Fechar</button>
         </div>
     </div>
@@ -443,19 +439,11 @@
         }
         mostrarSecao('brainrots');
 
-        // NOVO: Funções para o modal de pagamento
         function abrirModalPix() {
-            // Gera um número aleatório de 6 dígitos
             const codigoAleatorio = Math.floor(100000 + Math.random() * 900000);
-            
-            // Insira seu número de telefone aqui
-            const telefoneContato = "11987654321"; // Exemplo: (11) 98765-4321
-
-            // Preenche os campos no modal
+            const telefoneContato = "11945777937";
             document.getElementById('codigoAleatorio').value = codigoAleatorio;
             document.getElementById('telefoneContato').value = formatarTelefone(telefoneContato);
-
-            // Exibe o modal
             document.getElementById('modal-pix').style.display = 'flex';
         }
 
