@@ -309,7 +309,7 @@
                 <img src="imagens/garama.jpg" alt="Grama And Madung">
                 <div class="card-content">
                     <h2>Garama And Madung</h2>
-                    <p>50 Milhôes por segundo (sem mutação)</p>
+                    <p>50 Milhões por segundo (sem mutação)</p>
                     <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 30,00</a>
                 </div>
             </div>
@@ -398,23 +398,23 @@
         </div>
     </div>
     <footer>
-        © 2025 Steal a Brainrot - Todos os direitos reservados.
+        © 2025 Steal a Brainrot Loja Lowes Store - Todos os direitos reservados.
     </footer>
     <div class="modal-pix" id="modal-pix">
         <div class="modal-content">
             <h2>Pagamento Pix</h2>
-            <p>Siga os passos abaixo para concluir seu pagamento. Utilize o código de referência para que possamos identificar a sua compra. Depois de fazer o Pix, copie o codigo abaixo e mande no número inserido a baixo junto ao comprovante do pagamento. Caso precise de ajuda, contate o suporte!</p>
+            <p>Siga os passos abaixo para concluir seu pagamento. Utilize o **código de referência** para que possamos identificar a sua compra.</p>
             <div class="campo">
                 <label for="codigoAleatorio">Código de Referência (6 dígitos):</label>
                 <input type="text" id="codigoAleatorio" readonly>
                 <button onclick="copiarTexto('codigoAleatorio')">Copiar Código</button>
             </div>
             <div class="campo">
-                <label for="telefoneContato">Telefone para Contato:</label>
-                <input type="text" id="telefoneContato" readonly>
-                <button onclick="copiarTexto('telefoneContato')">Copiar Telefone</button>
+                <label for="discordContato">Link do Discord:</label>
+                <input type="text" id="discordContato" value="https://discord.gg/bVgGTfxtst" readonly>
+                <button onclick="copiarTexto('discordContato')">Copiar Link</button>
             </div>
-            <p style="font-size: 0.9em; color: #888;">Depois de fazer o pagamento, cole este link no deu navegador, realize o pagamento para nossa chave Pix (Os valores podem mudar dependendo se o Brainrot ter alguma mutação ou exemplo Gold/Diamante e etc).</p>
+            <p style="font-size: 0.9em; color: #888;">Após copiar os dados, realize o pagamento para nossa chave Pix. Se você não ter Discord, nos chame por e-mail! roubeumbrainrotstore@gmail.com</p>
             <p style="font-weight: bold; font-size: 1.1em; color: #fff; word-break: break-all;">Chave Pix: <span id="chave-pix-fixa">99eb6495-c967-4941-adf3-a592bc158d22</span></p>
             <button class="fechar" onclick="fecharModal()">Fechar</button>
         </div>
@@ -433,9 +433,7 @@
         mostrarSecao('brainrots');
         function abrirModalPix() {
             const codigoAleatorio = Math.floor(100000 + Math.random() * 900000);
-            const telefoneContato = "11945777937";
             document.getElementById('codigoAleatorio').value = codigoAleatorio;
-            document.getElementById('telefoneContato').value = formatarTelefone(telefoneContato);
             document.getElementById('modal-pix').style.display = 'flex';
         }
         function fecharModal() {
@@ -453,12 +451,6 @@
                     console.error('Erro ao copiar: ', err);
                     alert("Erro ao copiar. Por favor, copie o texto manualmente.");
                 });
-        }
-        function formatarTelefone(numero) {
-            const ddd = numero.substring(0, 2);
-            const parte1 = numero.substring(2, 7);
-            const parte2 = numero.substring(7, 11);
-            return `(${ddd}) ${parte1}-${parte2}`;
         }
     </script>
 </body>
