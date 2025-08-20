@@ -183,8 +183,8 @@
                 padding-top: 70px;
             }
         }
-        /* CSS para o modal de pagamento */
-        .modal-pix {
+        /* Estilos para os novos modais */
+        .modal {
             position: fixed;
             top: 0;
             left: 0;
@@ -270,7 +270,7 @@
                 <div class="card-content">
                     <h2>La Vacca Saturno Saturnita</h2>
                     <p>250k por segundo (sem mutação)</p>
-                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 5,50</a>
+                    <a href="#" class="botao-comprar" onclick="abrirModalVariacao('La Vacca Saturno Saturnita')">Comprar por R$ 5,50</a>
                 </div>
             </div>
             <div class="card">
@@ -278,7 +278,7 @@
                 <div class="card-content">
                     <h2>Los Tralaleritos</h2>
                     <p>500k por segundo (sem mutação)</p>
-                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 10,00</a>
+                    <a href="#" class="botao-comprar" onclick="abrirModalVariacao('Los Tralaleritos')">Comprar por R$ 10,00</a>
                 </div>
             </div>
             <div class="card">
@@ -286,7 +286,7 @@
                 <div class="card-content">
                     <h2>Chimpanzini Spiderini</h2>
                     <p>300k por segundo (sem mutação)</p>
-                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 9,00</a>
+                    <a href="#" class="botao-comprar" onclick="abrirModalVariacao('Chimpanzini Spiderini')">Comprar por R$ 9,00</a>
                 </div>
             </div>
             <div class="card">
@@ -294,7 +294,7 @@
                 <div class="card-content">
                     <h2>Graipuss Medusi</h2>
                     <p>1 Milhão por segundo (sem mutação)</p>
-                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 15,00</a>
+                    <a href="#" class="botao-comprar" onclick="abrirModalVariacao('Graipuss Medusi')">Comprar por R$ 15,00</a>
                 </div>
             </div>
             <div class="card">
@@ -302,7 +302,7 @@
                 <div class="card-content">
                     <h2>La Grande Combinasion</h2>
                     <p>10 Milhões por segundo (sem mutação)</p>
-                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 25,00</a>
+                    <a href="#" class="botao-comprar" onclick="abrirModalVariacao('La Grande Combinasion')">Comprar por R$ 25,00</a>
                 </div>
             </div>
             <div class="card">
@@ -310,7 +310,7 @@
                 <div class="card-content">
                     <h2>Garama And Madung</h2>
                     <p>50 Milhões por segundo (sem mutação)</p>
-                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 30,00</a>
+                    <a href="#" class="botao-comprar" onclick="abrirModalVariacao('Grama And Madung')">Comprar por R$ 30,00</a>
                 </div>
             </div>
             <div class="card">
@@ -318,7 +318,7 @@
                 <div class="card-content">
                     <h2>Orcalero Orcala</h2>
                     <p>100k por segundo (sem mutação)</p>
-                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 5,00</a>
+                    <a href="#" class="botao-comprar" onclick="abrirModalVariacao('Orcalero Orcala')">Comprar por R$ 5,00</a>
                 </div>
             </div>
             <div class="card">
@@ -326,7 +326,7 @@
                 <div class="card-content">
                     <h2>Torturrtuginni Dragonfrutini</h2>
                     <p>350k por segundo (sem mutação)</p>
-                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 9,00</a>
+                    <a href="#" class="botao-comprar" onclick="abrirModalVariacao('Torturrtuginni Dragonfrutini')">Comprar por R$ 9,00</a>
                 </div>
             </div>
             <div class="card">
@@ -334,7 +334,7 @@
                 <div class="card-content">
                     <h2>Las Tralaleritas</h2>
                     <p>650k por segundo (sem mutação)</p>
-                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 12,00</a>
+                    <a href="#" class="botao-comprar" onclick="abrirModalVariacao('Las Tralaleritas')">Comprar por R$ 12,00</a>
                 </div>
             </div>
             <div class="card">
@@ -342,7 +342,7 @@
                 <div class="card-content">
                     <h2>Pot HotsPot</h2>
                     <p>2,5 Milhões por segundo (sem mutação)</p>
-                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 20,00</a>
+                    <a href="#" class="botao-comprar" onclick="abrirModalVariacao('Pot HotsPot')">Comprar por R$ 20,00</a>
                 </div>
             </div>
             <div class="card">
@@ -350,7 +350,7 @@
                 <div class="card-content">
                     <h2>TrenosTurbo 3000</h2>
                     <p>150k por segundo (sem mutação)</p>
-                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 7,00</a>
+                    <a href="#" class="botao-comprar" onclick="abrirModalVariacao('TrenosTurbo 3000')">Comprar por R$ 7,00</a>
                 </div>
             </div>
             <div class="card">
@@ -358,7 +358,7 @@
                 <div class="card-content">
                     <h2>Lucky Block God Brainrot</h2>
                     <p>Chance de vir Orcalero Orcala ou Tigrilini Frudodini</p>
-                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 8,00</a>
+                    <a href="#" class="botao-comprar" onclick="abrirModalVariacao('Lucky Block God Brainrot')">Comprar por R$ 8,00</a>
                 </div>
             </div>
             <div class="card">
@@ -366,7 +366,7 @@
                 <div class="card-content">
                     <h2>Lucky Block Secreto</h2>
                     <p>Chance de vir Pot HotsPot ou Torturrtuginni Dragonfrutini</p>
-                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 15,00</a>
+                    <a href="#" class="botao-comprar" onclick="abrirModalVariacao('Lucky Block Secreto')">Comprar por R$ 15,00</a>
                 </div>
             </div>
         </div>
@@ -376,7 +376,7 @@
                 <div class="card-content">
                     <h2>2x money</h2>
                     <p>Colete 2x mais dinheiro!</p>
-                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 10,00</a>
+                    <a href="#" class="botao-comprar" onclick="abrirModalVariacao('2x money')">Comprar por R$ 10,00</a>
                 </div>
             </div>
             <div class="card">
@@ -384,7 +384,7 @@
                 <div class="card-content">
                     <h2>VIP</h2>
                     <p>Tenha vários benefícios!</p>
-                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 17,50</a>
+                    <a href="#" class="botao-comprar" onclick="abrirModalVariacao('VIP')">Comprar por R$ 17,50</a>
                 </div>
             </div>
             <div class="card">
@@ -392,7 +392,7 @@
                 <div class="card-content">
                     <h2>HD Admin</h2>
                     <p>Tenha comandos de administrador!</p>
-                    <a href="#" class="botao-comprar" onclick="abrirModalPix()">Comprar por R$ 50,00</a>
+                    <a href="#" class="botao-comprar" onclick="abrirModalVariacao('HD Admin')">Comprar por R$ 50,00</a>
                 </div>
             </div>
         </div>
@@ -400,9 +400,25 @@
     <footer>
         © 2025 Steal a Brainrot Loja Lowes Store - Todos os direitos reservados.
     </footer>
-    <div class="modal-pix" id="modal-pix">
+    <div class="modal" id="modal-variacao">
         <div class="modal-content">
-            <h2>Pagamento Pix</h2>
+            <h2 id="produto-variacao"></h2>
+            <p>Selecione a variação do produto:</p>
+            <div class="campo">
+                <button onclick="abrirModalPix('Gold', 'R$ 15,00')">Gold</button>
+            </div>
+            <div class="campo">
+                <button onclick="abrirModalPix('Diamante', 'R$ 25,00')">Diamante</button>
+            </div>
+            <div class="campo">
+                <button onclick="abrirModalPix('Rainbow', 'R$ 50,00')">Rainbow</button>
+            </div>
+            <button class="fechar" onclick="fecharModal('modal-variacao')">Voltar</button>
+        </div>
+    </div>
+    <div class="modal" id="modal-pix">
+        <div class="modal-content">
+            <h2 id="titulo-pix"></h2>
             <p>Siga os passos abaixo para concluir seu pagamento. Utilize o **código de referência** para que possamos identificar a sua compra.</p>
             <div class="campo">
                 <label for="codigoAleatorio">Código de Referência (6 dígitos):</label>
@@ -416,7 +432,7 @@
             </div>
             <p style="font-size: 0.9em; color: #888;">Após copiar os dados, realize o pagamento para nossa chave Pix. Se você não ter Discord, nos chame por e-mail! roubeumbrainrotstore@gmail.com</p>
             <p style="font-weight: bold; font-size: 1.1em; color: #fff; word-break: break-all;">Chave Pix: <span id="chave-pix-fixa">99eb6495-c967-4941-adf3-a592bc158d22</span></p>
-            <button class="fechar" onclick="fecharModal()">Fechar</button>
+            <button class="fechar" onclick="fecharModal('modal-pix')">Fechar</button>
         </div>
     </div>
     <script>
@@ -431,13 +447,23 @@
             document.getElementById('gamepass').style.display = secao === 'gamepass' ? 'grid' : 'none';
         }
         mostrarSecao('brainrots');
-        function abrirModalPix() {
+        // Função para abrir o modal de variação
+        function abrirModalVariacao(produto) {
+            document.getElementById('produto-variacao').textContent = produto;
+            document.getElementById('modal-variacao').style.display = 'flex';
+        }
+        // Função para abrir o modal de pagamento, passando a variação e o preço
+        function abrirModalPix(variacao, preco) {
             const codigoAleatorio = Math.floor(100000 + Math.random() * 900000);
             document.getElementById('codigoAleatorio').value = codigoAleatorio;
-            document.getElementById('modal-pix').style.display = 'flex';
+            const produtoBase = document.getElementById('produto-variacao').textContent;
+            document.getElementById('titulo-pix').textContent = `${produtoBase} - Variação ${variacao} (${preco})`;
+            document.getElementById('modal-variacao').style.display = 'none'; // Fecha o primeiro modal
+            document.getElementById('modal-pix').style.display = 'flex'; // Abre o segundo modal
         }
-        function fecharModal() {
-            document.getElementById('modal-pix').style.display = 'none';
+        // Função para fechar os modais
+        function fecharModal(id) {
+            document.getElementById(id).style.display = 'none';
         }
         function copiarTexto(id) {
             const campo = document.getElementById(id);
