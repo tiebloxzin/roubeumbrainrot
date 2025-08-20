@@ -449,11 +449,11 @@
         }
         mostrarSecao('brainrots');
 
-        // Multiplicadores para cada variação
+        // Multiplicadores para cada variação. EDITE AQUI PARA MUDAR OS PREÇOS.
         const multiplicadoresVariacao = {
-            'Gold': 1.5,
-            'Diamante': 2.5,
-            'Rainbow': 5.0
+            'Gold': 1.18,
+            'Diamante': 1.36,
+            'Rainbow': 2.0
         };
 
         // Função para formatar o número como moeda
@@ -469,7 +469,7 @@
 
             // Calcula e define os preços dos botões de variação
             const precoGold = precoBase * multiplicadoresVariacao.Gold;
-            const precoDiamante = precoBase * multiplicadoresVariacao.Diamante; // << AQUI ESTAVA O ERRO DE DIGITAÇÃO
+            const precoDiamante = precoBase * multiplicadoresVariacao.Diamante;
             const precoRainbow = precoBase * multiplicadoresVariacao.Rainbow;
 
             const btnGold = document.getElementById('btn-gold');
